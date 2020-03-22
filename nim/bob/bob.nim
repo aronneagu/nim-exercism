@@ -1,5 +1,5 @@
 import strutils
-proc hey*(phrase: string): string =
+func hey*(phrase: string): string =
   let phr = strip(phrase)
   if strip(phrase, true, true, {' ','\n','\t','\r'}) == "":
     return "Fine. Be that way!"
