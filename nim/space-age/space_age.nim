@@ -8,3 +8,4 @@ func age*(planet: string, age: int64): float =
   of "Saturn": return float(age) / (31557600 * 29.447498)
   of "Uranus": return float(age) / (31557600 * 84.016846)
   of "Neptune": return float(age) / (31557600 * 164.79132)
+  else: raise newException(ValueError,planet & "is not in our solar system")

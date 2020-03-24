@@ -1,12 +1,12 @@
 import strutils
 func hey*(phrase: string): string =
   let phr = strip(phrase)
-  if strip(phrase, true, true, {' ','\n','\t','\r'}) == "":
+  if strip(phrase) == "":
     return "Fine. Be that way!"
-  if phr == phr.toUpper and phr[phr.high] == '?' and find(phrase, {'A'..'Z'}) != -1: 
+  if phr == phr.toUpper and phr[phr.high] == '?' and {'A'..'Z'} in phr: 
     return "Calm down, I know what I'm doing!"
-  if phr[phr.high] == '?' and find(phr,{'a'..'z','0'..'9',':'}) != -1:
+  if phr[^1] == '?' and {'a'..'z','0'..'9',':'} in phr:
     return "Sure."
-  if phr == phr.toUpper and find(phr, {'A'..'Z'}) != -1:
+  if phr == phr.toUpper and {'A'..'Z'} in phr:
     return "Whoa, chill out!"
   return "Whatever."
